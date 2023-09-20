@@ -1,0 +1,46 @@
+/* .card-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .gaps {
+    gap: 1rem;
+  }
+  .category-title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: orange;
+  }
+  .body {
+    background-color: rgb(247, 247, 247);
+  } */
+#searchitem{
+  padding: 5px 0px;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  max-width: 300px;
+  border-radius: 5px;
+  text-align: left;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+#searchitem>ul{
+  margin: 0px !important;
+  list-style-type: none;
+}
+#searchitem>ul>li:hover{
+  background-color: rgba(216, 195, 195, 0.885);
+}
+#mainsearch{
+  position: relative;
+}
