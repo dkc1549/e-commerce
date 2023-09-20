@@ -172,8 +172,8 @@ $electronic2s = mysqli_query($connect, $electronic2);
                                 <h5 class="card-title"><?php echo $perfumearr['name'] ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $perfumearr['price']; ?></li>
-                                    <li>Author : <?php echo $perfumearr['brand']; ?></li>
-                                    <li>Type : <?php echo $perfumearr['weight']; ?></li>
+                                    <li>Brand : <?php echo $perfumearr['brand']; ?></li>
+                                    <li>Weight : <?php echo $perfumearr['weight']; ?></li>
                                 </ul>
 
                             </div>
@@ -199,7 +199,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
                                 <h5 class="card-title"><?php echo $electronic1arr['name'] ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $electronic1arr['price']; ?></li>
-                                    <li>Author : <?php echo $electronic1arr['brand']; ?></li>
+                                    <li>Brand : <?php echo $electronic1arr['brand']; ?></li>
                                     <li>OS : <?php echo $electronic1arr['os']; ?></li>
                                     <li>Memory : <?php echo $electronic1arr['memory']; ?></li>
                                 </ul>
@@ -227,7 +227,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
                                 <h5 class="card-title"><?php echo $electronic2arr['name'] ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $electronic2arr['price']; ?></li>
-                                    <li>Author : <?php echo $electronic2arr['brand']; ?></li>
+                                    <li>Brand : <?php echo $electronic2arr['brand']; ?></li>
                                     <li>OS : <?php echo $electronic2arr['os']; ?></li>
                                     <li>CPU : <?php echo $electronic2arr['cpu']; ?></li>
                                     <li>Memory : <?php echo $electronic2arr['memory size']; ?></li>

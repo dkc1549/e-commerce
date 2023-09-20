@@ -78,35 +78,93 @@ function category(value) {
       xhr.onload = function () {
         if ((this.status = 200)) {
           let data = this.responseXML;
-          console.log(data);
-          //   console.log(data.length);
-          //   for (let i=0;i<Object.keys(data).length;i++) {
-              /*output+=`<div class="card m-2" style="width: 18rem">
-              <img src="${data.getElementsByTagName('img')[i].childNodes[0].nodeValue}" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
+          let perfumedata=data.getElementsByTagName('perfume');
+          for (let i=0;i<perfumedata.length;i++) {
+            output+=`<div class="card m-2" style="width: 18rem">
+              <img src="${perfumedata[i].getElementsByTagName('img')[0].childNodes[0].nodeValue}" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
               <div class="card-body">
-                  <h5 class="card-title">${data.getElementsByTagName('name')[i].childNodes[0].nodeValue}</h5>
+                  <h5 class="card-title">${perfumedata[i].getElementsByTagName('name')[0].childNodes[0].nodeValue}</h5>
                   <ul class="card-text">
-                      <li>Price : $${data.getElementsByTagName('price')[i].childNodes[0].nodeValue}</li>
-                      <li>Author : ${data.getElementsByTagName('author')[i].childNodes[0].nodeValue}</li>
-                      <li>Type : ${data.getElementsByTagName('type')[i].childNodes[0].nodeValue}</li>
+                      <li>Price : $${perfumedata[i].getElementsByTagName('price')[0].childNodes[0].nodeValue}</li>
+                      <li>Brand : ${perfumedata[i].getElementsByTagName('brand')[0].textContent}</li>
+                      <li>Weight : ${perfumedata[i].getElementsByTagName('weight')[0].textContent}</li>
                   </ul>
 
               </div>
               <div class="card-footer">
-                  <a href="product.php?id=${data.getElementsByTagName('id')[i].childNodes[0].nodeValue}" class="btn btn-primary">View details</a>
-              </div>*/
-          // </div>`
+                  <a href="product.php?id=${perfumedata[i].getElementsByTagName('id')[0].childNodes[0].nodeValue}" class="btn btn-primary">View details</a>
+              </div>
+              </div>`
+          }
         }
-        // }
-        // output += `</div></div>`;
-        // console.log(output);
-        // display.innerHTML = output;
+        output += `</div></div>`;
+        display.innerHTML = output;
       };
       xhr.send();
       break;
     case "electronic1":
+      output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Electronic1</h2></div><div class="row justify-content-center">`;
+      xhr.open("GET", "backend/electronic1.php", true);
+      xhr.onload = function () {
+        if ((this.status = 200)) {
+          let data = this.responseXML;
+          let electronic1data=data.getElementsByTagName('electronic1');
+          for (let i=0;i<electronic1data.length;i++) {
+            output+=`<div class="card m-2" style="width: 18rem">
+              <img src="${electronic1data[i].getElementsByTagName('img')[0].childNodes[0].nodeValue}" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
+              <div class="card-body">
+                  <h5 class="card-title">${electronic1data[i].getElementsByTagName('name')[0].childNodes[0].nodeValue}</h5>
+                  <ul class="card-text">
+                      <li>Price : $${electronic1data[i].getElementsByTagName('price')[0].childNodes[0].nodeValue}</li>
+                      <li>Brand : ${electronic1data[i].getElementsByTagName('brand')[0].textContent}</li>
+                      <li>OS : ${electronic1data[i].getElementsByTagName('os')[0].textContent}</li>
+                      <li>Memory : ${electronic1data[i].getElementsByTagName('memory')[0].textContent}</li>
+                  </ul>
+
+              </div>
+              <div class="card-footer">
+                  <a href="product.php?id=${electronic1data[i].getElementsByTagName('id')[0].childNodes[0].nodeValue}" class="btn btn-primary">View details</a>
+              </div>
+              </div>`
+          }
+        }
+        output += `</div></div>`;
+        display.innerHTML = output;
+      };
+      xhr.send();
       break;
     case "electronic2":
+      output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Electronic2</h2></div><div class="row justify-content-center">`;
+      xhr.open("GET", "backend/electronic2.php", true);
+      xhr.onload = function () {
+        if ((this.status = 200)) {
+          let data = this.responseXML;
+          let electronic2data=data.getElementsByTagName('electronic2');
+          for (let i=0;i<electronic2data.length;i++) {
+            output+=`<div class="card m-2" style="width: 18rem">
+              <img src="${electronic2data[i].getElementsByTagName('img')[0].childNodes[0].nodeValue}" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
+              <div class="card-body">
+                  <h5 class="card-title">${electronic2data[i].getElementsByTagName('name')[0].childNodes[0].nodeValue}</h5>
+                  <ul class="card-text">
+                      <li>Price : $${electronic2data[i].getElementsByTagName('price')[0].childNodes[0].nodeValue}</li>
+                      <li>Brand : ${electronic2data[i].getElementsByTagName('brand')[0].textContent}</li>
+                      <li>OS : ${electronic2data[i].getElementsByTagName('os')[0].textContent}</li>
+                      <li>CPU : ${electronic2data[i].getElementsByTagName('cpu')[0].textContent}</li>
+                      <li>Memory size : ${electronic2data[i].getElementsByTagName('computer_memory')[0].textContent}</li>
+                      <li>Hardisk size : ${electronic2data[i].getElementsByTagName('hardisk')[0].textContent}</li>
+                  </ul>
+
+              </div>
+              <div class="card-footer">
+                  <a href="product.php?id=${electronic2data[i].getElementsByTagName('id')[0].childNodes[0].nodeValue}" class="btn btn-primary">View details</a>
+              </div>
+              </div>`
+          }
+        }
+        output += `</div></div>`;
+        display.innerHTML = output;
+      };
+      xhr.send();
       break;
   }
 }
