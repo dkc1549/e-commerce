@@ -1,7 +1,8 @@
-@extends('frontend.layouts.main')
-@section('page-title', 'Ecommerce - Home')
-@section('main-section')
-
+<?php
+require('process/connect.php');
+require('include/header.php');
+include('include/navbar.php');
+?>
 <main>
 
     <div class="container-fluid">
@@ -25,7 +26,7 @@
                             <h2>category name</h2>
 
                         </div>
-                        <div class="card-container">
+                        <div class="cards-container">
                             <!-- card with image title description -->
 
                             <div class="card" style="width: 18rem">
@@ -151,8 +152,6 @@
     </div>
 
 </main>
-
-
-
-
-@endsection
+<?php
+include('include/footer.php');
+?>

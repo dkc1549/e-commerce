@@ -1,46 +1,62 @@
-/* .card-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .gaps {
-    gap: 1rem;
-  }
-  .category-title-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    font-size: 1.2rem;
-  }
-  a:hover {
-    text-decoration: underline;
-    color: orange;
-  }
-  .body {
-    background-color: rgb(247, 247, 247);
-  } */
-#searchitem{
-  padding: 5px 0px;
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+.cards-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.gaps {
+  gap: 1rem;
+}
+.category-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+.body {
+  background-color: rgb(247, 247, 247);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.searchitem {
+  padding: 5px 5px;
   position: absolute;
   top: 40px;
   left: 0px;
-  max-width: 300px;
+  width: 250px;
   border-radius: 5px;
   text-align: left;
   max-height: 40vh;
   overflow-y: auto;
+  background: white;
 }
-#searchitem>ul{
-  margin: 0px !important;
-  list-style-type: none;
-}
-#searchitem>ul>li:hover{
-  background-color: rgba(216, 195, 195, 0.885);
-}
-#mainsearch{
+
+#mainsearch {
   position: relative;
+}
+.search-list {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  font-weight: 400;
+  width: 100%;
+  padding: 1px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+.search-list:hover {
+  background-color: rgb(220, 220, 220);
+}
+li {
+  list-style: none;
+  padding: 2px 0px;
+  width: 100%;
 }

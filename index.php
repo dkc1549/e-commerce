@@ -94,14 +94,14 @@ $electronic2s = mysqli_query($connect, $electronic2);
                         <div class="text-center">Filter by price</div>
                         <div class="container">
                             <div class="row justify-content-evenly">
-                            <div class="mb-5">
-                                <label for="" class="form-label">Max</label>
-                                <input type="number" step="0.01" class="d-inline-block form-control" name="" id="" placeholder="">
-                            </div>
-                            <div class="mb-5">
-                                <label for="" class="form-label">Min</label>
-                                <input type="number" step="0.01" class="form-control" name="" id="" placeholder="">
-                            </div>
+                                <div class="mb-5">
+                                    <label for="" class="form-label">Max</label>
+                                    <input type="number" step="0.01" class="d-inline-block form-control" name="" id="" placeholder="">
+                                </div>
+                                <div class="mb-5">
+                                    <label for="" class="form-label">Min</label>
+                                    <input type="number" step="0.01" class="form-control" name="" id="" placeholder="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -143,11 +143,11 @@ $electronic2s = mysqli_query($connect, $electronic2);
                             <img src="<?php echo $bookarr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $bookarr['name'] ?></h5>
-                                <ul class="card-text">
+                                <!-- <ul class="card-text">
                                     <li>Price : $<?php echo $bookarr['price']; ?></li>
                                     <li>Author : <?php echo $bookarr['author']; ?></li>
                                     <li>Type : <?php echo $bookarr['type']; ?></li>
-                                </ul>
+                                </ul> -->
 
                             </div>
                             <div class="card-footer">
@@ -170,11 +170,11 @@ $electronic2s = mysqli_query($connect, $electronic2);
                             <img src="<?php echo $perfumearr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $perfumearr['name'] ?></h5>
-                                <ul class="card-text">
+                                <!-- <ul class="card-text">
                                     <li>Price : $<?php echo $perfumearr['price']; ?></li>
                                     <li>Brand : <?php echo $perfumearr['brand']; ?></li>
                                     <li>Weight : <?php echo $perfumearr['weight']; ?></li>
-                                </ul>
+                                </ul> -->
 
                             </div>
                             <div class="card-footer">
@@ -197,12 +197,12 @@ $electronic2s = mysqli_query($connect, $electronic2);
                             <img src="<?php echo $electronic1arr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $electronic1arr['name'] ?></h5>
-                                <ul class="card-text">
+                                <!-- <ul class="card-text">
                                     <li>Price : $<?php echo $electronic1arr['price']; ?></li>
                                     <li>Brand : <?php echo $electronic1arr['brand']; ?></li>
                                     <li>OS : <?php echo $electronic1arr['os']; ?></li>
                                     <li>Memory : <?php echo $electronic1arr['memory']; ?></li>
-                                </ul>
+                                </ul> -->
 
                             </div>
                             <div class="card-footer">
@@ -225,14 +225,14 @@ $electronic2s = mysqli_query($connect, $electronic2);
                             <img src="<?php echo $electronic2arr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $electronic2arr['name'] ?></h5>
-                                <ul class="card-text">
+                                <!-- <ul class="card-text">
                                     <li>Price : $<?php echo $electronic2arr['price']; ?></li>
                                     <li>Brand : <?php echo $electronic2arr['brand']; ?></li>
                                     <li>OS : <?php echo $electronic2arr['os']; ?></li>
                                     <li>CPU : <?php echo $electronic2arr['cpu']; ?></li>
                                     <li>Memory : <?php echo $electronic2arr['memory size']; ?></li>
                                     <li>Hardisk : <?php echo $electronic2arr['hardisk size']; ?></li>
-                                </ul>
+                                </ul> -->
 
                             </div>
                             <div class="card-footer">
