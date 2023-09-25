@@ -66,7 +66,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
     <!-- ========== Hero section ends============ -->
 
     <!-- ========== Catchy Headline starts =========== -->
-    <div class="container text-justify">
+    <div class="container text-justify text-secondary small-description ">
         Welcome to [Your Website Name], your one-stop shop for <b>perfumes, books, laptops, and mobiles!</b> We offer a wide selection of products from top brands at competitive prices. Whether you're <b>looking for a new signature scent, a good read, or a powerful new laptop</b>, we have something for everyone. We also have a team of friendly and knowledgeable customer service representatives who are always happy to help.<br /> You can search item through search bar and filter item by category and the item's max and min price.
     </div>
     <!-- ============= Catchy Headline ends ============ -->
