@@ -135,7 +135,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
             <div class="my-4">
                 <div class="container d-flex justify-content-between">
                     <h2>Book</h2>
-                    <div><a href="#" class="fs-1">View more....</a></div>
+                    <div><a href="products.php?category=<?php echo "books";?>" class="fs-1">View more....</a></div>
                 </div>
                 <div class="row justify-content-center">
                     <?php while ($bookarr = $books->fetch_assoc()) { ?>
@@ -162,7 +162,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
             <div class="my-4">
                 <div class="container d-flex justify-content-between">
                     <h2>Perfume</h2>
-                    <div><a href="#" class="fs-1">View more....</a></div>
+                    <div><a href="products.php?category=<?php echo "perfumes";?>" class="fs-1">View more....</a></div>
                 </div>
                 <div class="row justify-content-center">
                     <?php while ($perfumearr = $perfumes->fetch_assoc()) { ?>
@@ -189,7 +189,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
             <div class="my-4">
                 <div class="container d-flex justify-content-between">
                     <h2>Electronic1</h2>
-                    <div><a href="#" class="fs-1">View more....</a></div>
+                    <div><a href="products.php?category=<?php echo "electronic1s";?>" class="fs-1">View more....</a></div>
                 </div>
                 <div class="row justify-content-center">
                     <?php while ($electronic1arr = $electronic1s->fetch_assoc()) { ?>
@@ -217,7 +217,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
             <div class="my-4">
                 <div class="container d-flex justify-content-between">
                     <h2>Electronic2</h2>
-                    <div><a href="#" class="fs-1">View more....</a></div>
+                    <div><a href="products.php?category=<?php echo "electronic2s";?>" class="fs-1">View more....</a></div>
                 </div>
                 <div class="row justify-content-center">
                     <?php while ($electronic2arr = $electronic2s->fetch_assoc()) { ?>
