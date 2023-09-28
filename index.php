@@ -151,7 +151,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $bookarr['id']; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $bookarr['id']; ?>&slug=<?php echo "books";?>" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php
@@ -162,7 +162,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
             <div class="my-4">
                 <div class="container d-flex justify-content-between">
                     <h2>Perfume</h2>
-                    <div><a href="products.php?category=<?php echo "perfumes";?>" class="fs-1">View more....</a></div>
+                    <div><a href="products.php?category=<?php echo 'perfumes';?>" class="fs-1">View more....</a></div>
                 </div>
                 <div class="row justify-content-center">
                     <?php while ($perfumearr = $perfumes->fetch_assoc()) { ?>
@@ -178,7 +178,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $perfumearr['id']; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $perfumearr['id']; ?>&slug=<?php echo 'perfumes';?>" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php
@@ -206,7 +206,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $electronic1arr['id']; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $electronic1arr['id']; ?>&slug=<?php echo 'electronic1s';?>" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php
@@ -236,7 +236,7 @@ $electronic2s = mysqli_query($connect, $electronic2);
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $electronic2arr['id']; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $electronic2arr['id']; ?>&<?php echo 'electronic2s';?>" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php

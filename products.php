@@ -50,7 +50,7 @@ if (isset($_GET['category'])) {
 
                                     </div>
                                     <div class="card-footer">
-                                        <a href="product.php?id=<?php echo $product['id']; ?>" class="btn btn-primary">View details</a>
+                                        <a href="product.php?id=<?php echo $product['id']; ?>&slug=<?php echo $category;?>" class="btn btn-primary">View details</a>
                                     </div>
                                 <?php
                                 }
