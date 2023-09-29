@@ -55,13 +55,13 @@ function cutString($string, $length)
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="uploads/lockscreen1.jpg" height="200px" style="object-fit: cover" alt="First slide" />
+                <img class="d-block w-100" src="uploads/banner1.png" height="300px" style="object-fit: cover" alt="First slide" />
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="uploads/wallpaper.jpg" height="200px" style="object-fit: cover" alt="Second slide" />
+                <img class="d-block w-100" src="uploads/banner2.jpg" height="300px" style="object-fit: cover" alt="Second slide" />
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="uploads/lockscreen1.jpg" height="200px" style="object-fit: cover" alt="Third slide" />
+                <img class="d-block w-100" src="uploads/banner3.jpeg" height="300px" style="object-fit: cover" alt="Third slide" />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

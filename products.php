@@ -10,6 +10,17 @@ if (isset($_GET['category'])) {
         $select = "SELECT * From $category WHERE product=(SELECT id FROM products WHERE CATEGORY = '$category')";
         $result = mysqli_query($connect, $select);
     }
+
+    // word limit
+    function cutString($string, $length)
+    {
+        if (strlen($string) > $length) {
+            $string = substr($string, 0, $length);
+            $string = substr($string, 0, strrpos($string, ' '));
+            $string = $string . '...';
+        }
+        return $string;
+    }
 ?>
     <main>
 
@@ -37,11 +48,12 @@ if (isset($_GET['category'])) {
                             <div class="cards-container">
                                 <!-- card with image title description -->
                                 <?php
+
                                 while ($product = mysqli_fetch_assoc($result)) {
                                 ?>
                                     <img src="<?php echo $product['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $product['name'] ?></h5>
+                                        <h5 title="<?php echo $product['name']; ?>" class="card-title"><?php echo cutString($product['name'], 30) ?></h5>
                                         <ul class="card-text">
                                             <li>Price : $<?php echo $product['price']; ?></li>
                                             <!-- <li>Brand : <?php echo $product['brand']; ?></li>
@@ -50,7 +62,7 @@ if (isset($_GET['category'])) {
 
                                     </div>
                                     <div class="card-footer">
-                                        <a href="product.php?id=<?php echo $product['id']; ?>&slug=<?php echo $category;?>" class="btn btn-primary">View details</a>
+                                        <a href="product.php?id=<?php echo $product['id']; ?>&slug=<?php echo $category; ?>" class="btn btn-primary">View details</a>
                                     </div>
                                 <?php
                                 }
