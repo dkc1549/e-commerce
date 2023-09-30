@@ -75,7 +75,7 @@ li {
   margin-top: 2.5rem;
   /* sticky on the bottom of the page */
 }
-.footer {
+.footer-page {
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -25,16 +25,18 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($connect, $select);
     $product = mysqli_fetch_assoc($result);
 ?>
+    <!-- Product Details in card side by side -->
+
     <div class="mt-2">
-        <h1 class="bg-secondary p-3 text-center mb-4"><?php echo $product['name']; ?></h1>
-        <div class="container">
+        <h1 class="bg-secondary p-3 text-center mb-4" style="max-width:700px;margin:auto;color:white;border-radius:0.5rem"><?php echo $product['name']; ?></h1>
+        <div class="container" style="border:2px gray solid;border-radius:.5rem;padding:0.5rem">
             <div class="product-details row">
                 <div class="product-images text-center col-lg-6">
                     <a href="<?php echo $product['img']; ?>" target="_blank">
                         <img src="<?php echo $product['img']; ?>" class="rounded img-fluid" alt="Product Image">
                     </a>
                 </div>
-                <div class="product-info container col-lg-6">
+                <div class="product-info container col-lg-6 text-justify" style='margin:auto auto'>
                     <div>
                         <?php
                         if ($category == 'books') {
@@ -81,6 +83,8 @@ if (isset($_GET['id'])) {
                         }
                         ?>
                     </div>
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">Add to cart</a>
+                    <a name="" id="" class="btn btn-secondary" href="#" role="button">Buy Now</a>
                 </div>
             </div>
         </div>

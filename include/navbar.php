@@ -40,7 +40,7 @@
                 }
                 ?>
                 <div class="">
-                    <ul class=" footer">
+                    <ul class=" footer-page">
                         <li class="nav-item active head-nav">
                             <a class="nav-link head-nav" href="index.php">Home
                                 <span class="sr-only">(current)</span></a>

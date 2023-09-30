@@ -1,6 +1,6 @@
 <footer class="main-footer sticky-bottom">
   <!-- place footer here -->
-  <div class="  footer text-center ">
+  <div class="  footer-page text-center ">
     <div>
       <div>
         <img src="uploads/logo.png" width="150" height="150" class="d-inline-block align-top" alt="logo">

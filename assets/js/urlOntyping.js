@@ -4,8 +4,8 @@ catgry.addEventListener('change', function () {
   category(catgry.value);
 });
 
-document.getElementById("max").addEventListener("change", price);
-document.getElementById("min").addEventListener("change", price);
+document.getElementById('max').addEventListener('change', price);
+document.getElementById('min').addEventListener('change', price);
 
 // <======= SCRIPT FOR NAV BAR SEARCH ============>
 let searchvalue = document.getElementById('searchitem');
@@ -213,30 +213,30 @@ function category(value) {
 
 // <======== SCRIPT FOR PRICE FILTER =========>
 function price() {
-  let slug = document.getElementById("category").value;
+  let slug = document.getElementById('category').value;
   if (slug !== null) {
     let xhr = new XMLHttpRequest();
-    let maximum = document.getElementById("max").value;
-    let minimum = document.getElementById("min").value;
-    if (maximum !== "" && minimum !== "") {
+    let maximum = document.getElementById('max').value;
+    let minimum = document.getElementById('min').value;
+    if (maximum !== '' && minimum !== '') {
       xhr.open(
-        "GET",
+        'GET',
         `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
         true
       );
     } else {
-      if (maximum !== "") {
+      if (maximum !== '') {
         minimum = 0;
         xhr.open(
-          "GET",
+          'GET',
           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
           true
         );
       }
-      if (minimum !== "") {
+      if (minimum !== '') {
         maximum = 10000;
         xhr.open(
-          "GET",
+          'GET',
           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
           true
         );
@@ -245,7 +245,8 @@ function price() {
     xhr.onload = function () {
       if (this.status == 200) {
         let data = JSON.parse(this.responseText);
-        if (typeof data == "string") {
+        console.log(data);
+        if (typeof data == 'string') {
           data = JSON.parse(data);
         }
         console.log(data);
@@ -341,4 +342,3 @@ function truncate(str, n) {
 //      Weight : ${perfumedata[i].getElementsByTagName('weight')[0].textContent}
 //    </li>
 //  </ul>;
-

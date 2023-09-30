@@ -61,7 +61,7 @@ function cutString($string, $length)
                 <img class="d-block w-100" src="uploads/banner2.jpg" height="300px" style="object-fit: cover" alt="Second slide" />
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="uploads/banner3.jpeg" height="300px" style="object-fit: cover" alt="Third slide" />
+                <img class="d-block w-100" src="uploads/banner3.png" height="300px" style="object-fit: cover" alt="Third slide" />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
