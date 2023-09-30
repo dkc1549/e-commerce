@@ -214,6 +214,8 @@ function category(value) {
 // <======== SCRIPT FOR PRICE FILTER =========>
 function price() {
   let slug = document.getElementById('category').value;
+  let display = document.getElementById('filteroutput');
+  let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
   if (slug !== null) {
     let xhr = new XMLHttpRequest();
     console.log('slug empty chaina wala');
@@ -222,15 +224,26 @@ function price() {
     let minimum = document.getElementById('min').value;
     console.log(`minimum = ${minimum}`);
     console.log(typeof minimum);
-    if (maximum !== '' && minimum !== '') {
-      console.log('maximum and minimum wala');
+    if (maximum === '' && minimum === '') {
+      maximum = 10000;
+      minimum = 0;
+      console.log('maximum and minimum empty chaina wala');
       xhr.open(
         'GET',
         `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
         true
       );
-    } else {
-      if (maximum !== '') {
+    }
+
+    try {
+      if (maximum !== '' && minimum !== '') {
+        console.log('maximum and minimum wala');
+        xhr.open(
+          'GET',
+          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
+          true
+        );
+      } else if (maximum !== '') {
         console.log('Maximum wala');
         minimum = 0;
         xhr.open(
@@ -238,8 +251,7 @@ function price() {
           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
           true
         );
-      }
-      if (minimum !== '') {
+      } else if (minimum !== '') {
         console.log('minimum wala');
         maximum = 10000;
         xhr.open(
@@ -248,27 +260,25 @@ function price() {
           true
         );
       }
-    }
-    xhr.onload = function () {
-      if (this.status == 200) {
-        let display = document.getElementById('filteroutput');
-        let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
-        let data = JSON.parse(this.responseText);
-        console.log(data);
-        if (typeof data == 'string') {
-          data = JSON.parse(data);
-        }
-        console.log(data);
-        data.map((item) => {
-          output += `<div class="card m-2" style="width: 18rem">
+      xhr.onload = function () {
+        if (this.status == 200) {
+          let data = JSON.parse(this.responseText);
+          console.log(data);
+          if (typeof data == 'string') {
+            data = JSON.parse(data);
+          }
+          console.log(data);
+
+          data.map((item) => {
+            output += `<div class="card m-2" style="width: 18rem">
             <img src="${
               item.img
             }" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
             <div class="card-body">
                 <h5 title="${item.name}" class="card-title">${truncate(
-            item.name,
-            30
-          )}</h5>
+              item.name,
+              30
+            )}</h5>
                 <p class="card-text">Price : $${item.price}</p>
                 </div>
                  <div class="card-footer">
@@ -278,14 +288,29 @@ function price() {
               </div>
                 </div>
                 `;
-        });
-        display.innerHTML = output;
-      }
-    };
-    xhr.send();
+          });
+          display.innerHTML = output;
+        }
+      };
+      xhr.send();
+    } catch (error) {
+      let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
+      // display product not found
+      output += `<div class="card m-2" style="width: 18rem">
+      <div class="card-body">
+          <h5 class="card-title">Product not found</h5>
+          </div>
+           </div>
+           `;
+      document.getElementById('filteroutput').innerHTML = output;
+    }
+    if (maximum !== '' && minimum !== '' && maximum < minimum) {
+      let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
+      output += `<h3>Products Not found</h3>`;
+      display.innerHTML = output;
+    }
   }
 }
-
 function truncate(str, n) {
   return str.length > n ? str.substr(0, n - 1) + '..' : str;
 }

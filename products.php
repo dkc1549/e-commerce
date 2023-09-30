@@ -45,24 +45,26 @@ if (isset($_GET['category'])) {
                                 <h2>category name</h2>
 
                             </div>
-                            <div class="cards-container">
+                            <div class="cards-container ">
                                 <!-- card with image title description -->
                                 <?php
 
                                 while ($product = mysqli_fetch_assoc($result)) {
                                 ?>
-                                    <img src="<?php echo $product['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 title="<?php echo $product['name']; ?>" class="card-title"><?php echo cutString($product['name'], 30) ?></h5>
-                                        <ul class="card-text">
-                                            <li>Price : $<?php echo $product['price']; ?></li>
-                                            <!-- <li>Brand : <?php echo $product['brand']; ?></li>
+                                    <div class="card m-2 " style="width: 18rem">
+                                        <img src="<?php echo $product['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
+                                        <div class="card-body">
+                                            <h5 title="<?php echo $product['name']; ?>" class="card-title"><?php echo cutString($product['name'], 30) ?></h5>
+                                            <ul class="card-text">
+                                                <li>Price : $<?php echo $product['price']; ?></li>
+                                                <!-- <li>Brand : <?php echo $product['brand']; ?></li>
                                     <li>Weight : <?php echo $product['weight']; ?></li> -->
-                                        </ul>
+                                            </ul>
 
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="product.php?id=<?php echo $product['id']; ?>&slug=<?php echo $category; ?>" class="btn btn-primary">View details</a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="product.php?id=<?php echo $product['id']; ?>&slug=<?php echo $category; ?>" class="btn btn-primary">View details</a>
+                                        </div>
                                     </div>
                                 <?php
                                 }
