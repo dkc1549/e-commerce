@@ -9,12 +9,6 @@
             </button>
 
             <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-                <?php
-                $url = $_SERVER['REQUEST_URI'];
-                $urlParts = explode('/', trim($url, '/'));
-                $lastElement = end($urlParts);
-                if ((strpos($url, 'index') !== false) || $lastElement === "e-commerce") {
-                ?>
                     <div class="justify-content-center">
                         <form class="form-inline my-2 my-lg-0">
 
@@ -36,9 +30,6 @@
 
                         </form>
                     </div>
-                <?php
-                }
-                ?>
                 <div class="">
                     <ul class=" footer-page">
                         <li class="nav-item active head-nav">
