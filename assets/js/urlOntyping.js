@@ -216,34 +216,41 @@ function price() {
   let slug = document.getElementById('category').value;
   if (slug !== null) {
     let xhr = new XMLHttpRequest();
-    console.log("slug empty chaina wala");
-    let maximum = document.getElementById("max").value;
-    console.log("maximum = ",maximum);
-    let minimum = document.getElementById("min").value;
-    console.log("minimum = |",minimum,"|");
-    console.log(typeof(minimum));
-    if (maximum !== "" && minimum !== "") {
-      console.log("maximum and minimum wala");
-      xhr.open("GET",`backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,true);
+    console.log('slug empty chaina wala');
+    let maximum = document.getElementById('max').value;
+    console.log(`maximum = ${maximum}`);
+    let minimum = document.getElementById('min').value;
+    console.log(`minimum = ${minimum}`);
+    console.log(typeof minimum);
+    if (maximum !== '' && minimum !== '') {
+      console.log('maximum and minimum wala');
+      xhr.open(
+        'GET',
+        `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
+        true
+      );
     } else {
-      if (maximum !== "") {
+      if (maximum !== '') {
         console.log('Maximum wala');
         minimum = 0;
         xhr.open(
           'GET',
-          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
+          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
           true
         );
       }
-      if (minimum !== "") {
-        console.log("minimum wala");
+      if (minimum !== '') {
+        console.log('minimum wala');
         maximum = 10000;
-        xhr.open("GET",`backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,true);
+        xhr.open(
+          'GET',
+          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
+          true
+        );
       }
     }
     xhr.onload = function () {
       if (this.status == 200) {
-        console.log(this.responseText);
         let data = JSON.parse(this.responseText);
         console.log(data);
         if (typeof data == 'string') {
@@ -255,6 +262,41 @@ function price() {
     xhr.send();
   }
 }
+// async function price() {
+//   let slug = document.getElementById('category').value;
+//   try {
+//     if (slug !== null) {
+//       let maximum = Number(document.getElementById('max').value);
+//       let minimum = Number(document.getElementById('min').value);
+//       console.log('maximum = ' + maximum);
+//       console.log('minimum = ' + minimum);
+//       console.log(slug);
+
+//       if (maximum !== '' && minimum !== '') {
+//         let output = await fetch(
+//           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`
+//         );
+
+//         let data = await output.json();
+//         console.log(data);
+//       } else if (maximum !== '') {
+//         let output = await fetch(
+//           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`
+//         );
+//         let data = await output.json();
+//         console.log(data);
+//       } else if (minimum !== '') {
+//         let output = await fetch(
+//           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`
+//         );
+//         let data = await output.json();
+//         console.log(data);
+//       }
+//     }
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 // search.addEventListener('input', (e) => {
 //   const userInput = search.value;
