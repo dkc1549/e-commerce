@@ -216,16 +216,18 @@ function price() {
   let slug = document.getElementById("category").value;
   if (slug !== null) {
     let xhr = new XMLHttpRequest();
+    console.log("slug empty chaina wala");
     let maximum = document.getElementById("max").value;
+    console.log("maximum = ",maximum);
     let minimum = document.getElementById("min").value;
+    console.log("minimum = |",minimum,"|");
+    console.log(typeof(minimum));
     if (maximum !== "" && minimum !== "") {
-      xhr.open(
-        "GET",
-        `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
-        true
-      );
+      console.log("maximum and minimum wala");
+      xhr.open("GET",`backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,true);
     } else {
       if (maximum !== "") {
+        console.log('Maximum wala');
         minimum = 0;
         xhr.open(
           "GET",
@@ -234,16 +236,14 @@ function price() {
         );
       }
       if (minimum !== "") {
+        console.log("minimum wala");
         maximum = 10000;
-        xhr.open(
-          "GET",
-          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
-          true
-        );
+        xhr.open("GET",`backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,true);
       }
     }
     xhr.onload = function () {
       if (this.status == 200) {
+        console.log(this.responseText);
         let data = JSON.parse(this.responseText);
         if (typeof data == "string") {
           data = JSON.parse(data);
