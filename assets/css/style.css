@@ -22,6 +22,7 @@ a:hover {
   text-decoration: underline;
   color: orange;
 }
+
 .body {
   background-color: rgb(247, 247, 247);
   font-family: 'Montserrat', sans-serif;
@@ -67,22 +68,43 @@ li {
 }
 .main-footer {
   background-color: rgb(0, 0, 0);
-
   color: white;
   text-align: center;
   padding: 1rem;
   width: 100%;
-
+  margin-top: 2.5rem;
   /* sticky on the bottom of the page */
-  top: 90%;
-  position: sticky;
-  z-index: 1;
 }
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 2rem;
+}
+.head-nav {
+  color: white;
+}
+.head-nav:hover {
+  text-decoration: none;
+  color: orange;
+}
+.title-animation {
+  color: red;
+  animation: change-color 4s infinite ease-in-out alternate;
+}
+@keyframes change-color {
+  0% {
+    color: red;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1rem);
+    color: orange;
+  }
+  100% {
+    color: red;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 700px) {
@@ -91,4 +113,23 @@ li {
     align-items: center;
     margin: 0 auto;
   }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
