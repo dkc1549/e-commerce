@@ -251,72 +251,40 @@ function price() {
     }
     xhr.onload = function () {
       if (this.status == 200) {
+        let display = document.getElementById('filteroutput');
+        let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
         let data = JSON.parse(this.responseText);
         console.log(data);
         if (typeof data == 'string') {
           data = JSON.parse(data);
         }
         console.log(data);
+        data.map((item) => {
+          output += `<div class="card m-2" style="width: 18rem">
+            <img src="${
+              item.img
+            }" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 title="${item.name}" class="card-title">${truncate(
+            item.name,
+            30
+          )}</h5>
+                <p class="card-text">Price : $${item.price}</p>
+                </div>
+                 <div class="card-footer">
+                  <a href="product.php?id=${
+                    item.id
+                  }&slug=electronic2s" class="btn btn-primary">View details</a>
+              </div>
+                </div>
+                `;
+        });
+        display.innerHTML = output;
       }
     };
     xhr.send();
   }
 }
-// async function price() {
-//   let slug = document.getElementById('category').value;
-//   try {
-//     if (slug !== null) {
-//       let maximum = Number(document.getElementById('max').value);
-//       let minimum = Number(document.getElementById('min').value);
-//       console.log('maximum = ' + maximum);
-//       console.log('minimum = ' + minimum);
-//       console.log(slug);
-
-//       if (maximum !== '' && minimum !== '') {
-//         let output = await fetch(
-//           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`
-//         );
-
-//         let data = await output.json();
-//         console.log(data);
-//       } else if (maximum !== '') {
-//         let output = await fetch(
-//           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`
-//         );
-//         let data = await output.json();
-//         console.log(data);
-//       } else if (minimum !== '') {
-//         let output = await fetch(
-//           `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`
-//         );
-//         let data = await output.json();
-//         console.log(data);
-//       }
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// search.addEventListener('input', (e) => {
-//   const userInput = search.value;
-// }
-
-//   const newUrl = `/search?q=${userInput}`;
-//   history.pushState({}, '', newUrl);
-
-//   displaySearchResuts(userInput);
-// });
-
-// async function displaySearchResuts(query) {
-//   try {
-//     const res = await fetch(`/search?q=${query}`);
-//     const data = await res.json();
-//     console.log(data);
-//   } catch (error) {
-//     console.error(error.message());
-//   }
-// }
 
 function truncate(str, n) {
   return str.length > n ? str.substr(0, n - 1) + '..' : str;
