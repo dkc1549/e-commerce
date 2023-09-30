@@ -156,15 +156,15 @@ function cutString($string, $length)
 
 
                                                                                                 echo cutString($bookarr['name'], 30) ?></h5>
-                                <!-- <ul class="card-text">
+                                <ul class="card-text">
                                     <li>Price : $<?php echo $bookarr['price']; ?></li>
                                     <li>Author : <?php echo $bookarr['author']; ?></li>
                                     <li>Type : <?php echo $bookarr['type']; ?></li>
-                                </ul> -->
+                                </ul>
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $bookarr['id']; ?>&slug=<?php echo "books"; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $bookarr['id']; ?>&slug=books" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php
@@ -183,15 +183,15 @@ function cutString($string, $length)
                             <img src="<?php echo $perfumearr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 title="<?php echo $perfumearr['name']; ?>" class="card-title"><?php echo cutString($perfumearr['name'], 30) ?></h5>
-                                <!-- <ul class="card-text">
+                                <ul class="card-text">
                                     <li>Price : $<?php echo $perfumearr['price']; ?></li>
                                     <li>Brand : <?php echo $perfumearr['brand']; ?></li>
                                     <li>Weight : <?php echo $perfumearr['weight']; ?></li>
-                                </ul> -->
+                                </ul>
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $perfumearr['id']; ?>&slug=<?php echo 'perfumes'; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $perfumearr['id']; ?>&slug=perfumes" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php
@@ -210,16 +210,16 @@ function cutString($string, $length)
                             <img src="<?php echo $electronic1arr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 title="<?php echo $electronic1arr['name']; ?>" class="card-title"><?php echo cutString($electronic1arr['name'], 30) ?></h5>
-                                <!-- <ul class="card-text">
+                                <ul class="card-text">
                                     <li>Price : $<?php echo $electronic1arr['price']; ?></li>
                                     <li>Brand : <?php echo $electronic1arr['brand']; ?></li>
                                     <li>OS : <?php echo $electronic1arr['os']; ?></li>
                                     <li>Memory : <?php echo $electronic1arr['memory']; ?></li>
-                                </ul> -->
+                                </ul>
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $electronic1arr['id']; ?>&slug=<?php echo 'electronic1s'; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $electronic1arr['id']; ?>&slug=electronic1s" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php
@@ -238,18 +238,18 @@ function cutString($string, $length)
                             <img src="<?php echo $electronic2arr['img'] ?>" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 title="<?php echo $electronic2arr['name']; ?>" class="card-title"><?php echo cutString($electronic2arr['name'], 30) ?></h5>
-                                <!-- <ul class="card-text">
+                                <ul class="card-text">
                                     <li>Price : $<?php echo $electronic2arr['price']; ?></li>
                                     <li>Brand : <?php echo $electronic2arr['brand']; ?></li>
                                     <li>OS : <?php echo $electronic2arr['os']; ?></li>
                                     <li>CPU : <?php echo $electronic2arr['cpu']; ?></li>
                                     <li>Memory : <?php echo $electronic2arr['memory size']; ?></li>
                                     <li>Hardisk : <?php echo $electronic2arr['hardisk size']; ?></li>
-                                </ul> -->
+                                </ul>
 
                             </div>
                             <div class="card-footer">
-                                <a href="product.php?id=<?php echo $electronic2arr['id']; ?>&<?php echo 'electronic2s'; ?>" class="btn btn-primary">View details</a>
+                                <a href="product.php?id=<?php echo $electronic2arr['id']; ?>&slug=electronic2s" class="btn btn-primary">View details</a>
                             </div>
                         </div>
                     <?php

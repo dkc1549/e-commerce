@@ -208,6 +208,10 @@ function category(value) {
   }
 }
 
+// <======== SCRIPT FOR PRICE FILTER =========>
+let max=10000;
+let min=0;
+
 // search.addEventListener('input', (e) => {
 //   const userInput = search.value;
 // }
