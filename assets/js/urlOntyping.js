@@ -4,6 +4,9 @@ catgry.addEventListener('change', function () {
   category(catgry.value);
 });
 
+document.getElementById("max").addEventListener("change", price);
+document.getElementById("min").addEventListener("change", price);
+
 // <======= SCRIPT FOR NAV BAR SEARCH ============>
 let searchvalue = document.getElementById('searchitem');
 // function search() {
@@ -209,8 +212,48 @@ function category(value) {
 }
 
 // <======== SCRIPT FOR PRICE FILTER =========>
-let max = 10000;
-let min = 0;
+function price() {
+  let slug = document.getElementById("category").value;
+  if (slug !== null) {
+    let xhr = new XMLHttpRequest();
+    let maximum = document.getElementById("max").value;
+    let minimum = document.getElementById("min").value;
+    if (maximum !== "" && minimum !== "") {
+      xhr.open(
+        "GET",
+        `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
+        true
+      );
+    } else {
+      if (maximum !== "") {
+        minimum = 0;
+        xhr.open(
+          "GET",
+          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
+          true
+        );
+      }
+      if (minimum !== "") {
+        maximum = 10000;
+        xhr.open(
+          "GET",
+          `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}`,
+          true
+        );
+      }
+    }
+    xhr.onload = function () {
+      if (this.status == 200) {
+        let data = JSON.parse(this.responseText);
+        if (typeof data == "string") {
+          data = JSON.parse(data);
+        }
+        console.log(data);
+      }
+    };
+    xhr.send();
+  }
+}
 
 // search.addEventListener('input', (e) => {
 //   const userInput = search.value;
