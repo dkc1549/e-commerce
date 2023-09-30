@@ -1,9 +1,11 @@
-<footer class="main-footer">
+<footer class="main-footer sticky-bottom">
   <!-- place footer here -->
-  <div class="  footer text-center ">
+  <div class="  footer-page text-center ">
     <div>
-      <div>logo</div>
-      <div class="footer-copyright text-center py-3">© 2022 Copyright: <a class="" href="index.php">E-commerce</a></div>
+      <div>
+        <img src="uploads/logo.png" width="150" height="150" class="d-inline-block align-top" alt="logo">
+      </div>
+      <div class="footer-copyright text-center py-3">© 2022 Copyright: <a class="" href="index.php">SOF102</a></div>
     </div>
     <div class="  py-3">
       <h3>Categorys</h3>

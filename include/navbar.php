@@ -1,54 +1,54 @@
 <body>
     <header class='sticky-top'>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-            <a class="navbar-brand" href="index.php">Navbar</a>
+            <a class="navbar-brand title-animation" href="index.php">
+                <img src="uploads/logo.png" width="50" height="50" class="d-inline-block align-top" alt="logo">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-                <?php 
+                <?php
                 $url = $_SERVER['REQUEST_URI'];
                 $urlParts = explode('/', trim($url, '/'));
                 $lastElement = end($urlParts);
-                    if ((strpos($url, 'index') !== false)||$lastElement==="e-commerce") {
+                if ((strpos($url, 'index') !== false) || $lastElement === "e-commerce") {
                 ?>
-                <div class="justify-content-center">
-                    <form class="form-inline my-2 my-lg-0">
-                        <div id="mainsearch" class="d-block">
-                            <input class="form-control mr-sm-2" type="search" id="searchbtn" placeholder="Search by id or name" aria-label="Search" />
-                            <div class="bg-light text-secondary" id="searchitem">
+                    <div class="justify-content-center">
+                        <form class="form-inline my-2 my-lg-0">
 
+                            <div id="mainsearch" class="d-block">
+                                <script>
+                                    function hideSearch() {
+                                        // wait two second and make it empty
+                                        setTimeout(function() {
+                                            document.getElementById('searchitem').innerHTML = '';
+                                        }, 500)
+                                        // document.getElementById('searchitem').innerHTML = '';
+                                    }
+                                </script>
+                                <input onblur="hideSearch()" class="form-control mr-sm-2" type="search" id="searchbtn" placeholder="Search by id or name" aria-label="Search" />
+                                <div class="bg-light text-secondary" id="searchitem">
+
+                                </div>
                             </div>
-                        </div>
 
-                    </form>
-                </div>
+                        </form>
+                    </div>
                 <?php
-                    }
-                    ?>
+                }
+                ?>
                 <div class="">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Home
+                    <ul class=" footer-page">
+                        <li class="nav-item active head-nav">
+                            <a class="nav-link head-nav" href="index.php">Home
                                 <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+
+                        <li class="nav-item ">
+                            <a class=" head-nav" href="">About US</a>
                         </li>
-                        <?php if ((strpos($url, 'index') !== false)||$lastElement==="e-commerce") { ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categories
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#books">Books</a>
-                                <a class="dropdown-item" href="#perfumes">Perfumes</a>
-                                <a class="dropdown-item" href="#electronic1">Electronics1</a>
-                                <a class="dropdown-item" href="#electronic2">Electronics2</a>
-                            </div>
-                        </li>
-                        <?php } ?>
 
                     </ul>
                 </div>

@@ -61,7 +61,7 @@ function cutString($string, $length)
                 <img class="d-block w-100" src="uploads/banner2.jpg" height="300px" style="object-fit: cover" alt="Second slide" />
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="uploads/banner3.jpeg" height="300px" style="object-fit: cover" alt="Third slide" />
+                <img class="d-block w-100" src="uploads/banner3.png" height="300px" style="object-fit: cover" alt="Third slide" />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -77,7 +77,7 @@ function cutString($string, $length)
 
     <!-- ========== Catchy Headline starts =========== -->
     <div class="container text-justify text-secondary small-description ">
-        Welcome to [Your Website Name], your one-stop shop for <b>perfumes, books, laptops, and mobiles!</b> We offer a wide selection of products from top brands at competitive prices. Whether you're <b>looking for a new signature scent, a good read, or a powerful new laptop</b>, we have something for everyone. We also have a team of friendly and knowledgeable customer service representatives who are always happy to help.<br /> You can search item through search bar and filter item by category and the item's max and min price.
+        Welcome to SOF102, your one-stop shop for <b>perfumes, books, laptops, and mobiles!</b> We offer a wide selection of products from top brands at competitive prices. Whether you're <b>looking for a new signature scent, a good read, or a powerful new laptop</b>, we have something for everyone. We also have a team of friendly and knowledgeable customer service representatives who are always happy to help.<br /> You can search item through search bar and filter item by category and the item's max and min price.
     </div>
     <!-- ============= Catchy Headline ends ============ -->
     <div class="container-fluid">
