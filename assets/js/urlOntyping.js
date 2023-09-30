@@ -1,11 +1,11 @@
-document.getElementById('searchbtn').addEventListener('input', search);
-let catgry = document.getElementById('category');
-catgry.addEventListener('change', function () {
+document.getElementById("searchbtn").addEventListener("input", search);
+let catgry = document.getElementById("category");
+catgry.addEventListener("change", function () {
   category(catgry.value);
 });
 
 // <======= SCRIPT FOR NAV BAR SEARCH ============>
-let searchvalue = document.getElementById('searchitem');
+let searchvalue = document.getElementById("searchitem");
 // function search() {
 //   let search = document.getElementById('searchbtn').value;
 //   if (search != '') {
@@ -35,43 +35,43 @@ let searchvalue = document.getElementById('searchitem');
 // }
 // using fetch request instead of xhr
 async function search() {
-  let search = document.getElementById('searchbtn').value;
-  if (search != '') {
-    let res = await fetch('backend/search.php?search=' + search);
+  let search = document.getElementById("searchbtn").value;
+  if (search != "") {
+    let res = await fetch("backend/search.php?search=" + search);
     let data = await res.json();
     let output = '<ul class="searchitem">';
-    if (typeof data == 'string') {
+    if (typeof data == "string") {
       data = JSON.parse(data);
     }
     for (const key in data) {
       output += `<li class='search-list'><a title="${
         data[key].name
       }"  href="product.php?id=${data[key].id}">${
-        data[key].name !== '' && truncate(data[key].name, 23)
+        data[key].name !== "" && truncate(data[key].name, 23)
       }</a></li>`;
     }
-    output += '</ul>';
+    output += "</ul>";
     searchvalue.innerHTML = output;
   } else {
-    searchvalue.innerHTML = '';
+    searchvalue.innerHTML = "";
   }
 }
 // <========= SCRIPT FOR NAV BAR SEARCH ENDS ============>
 
 // <======== SCRIPT FOR CATEGORY FILTER =========>
 function category(value) {
-  let display = document.getElementById('filteroutput');
+  let display = document.getElementById("filteroutput");
   let xhr = new XMLHttpRequest();
-  let output = '';
+  let output = "";
   output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Book</h2></div><div class="row justify-content-center">`;
   switch (value) {
-    case 'book':
+    case "book":
       output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Book</h2></div><div class="row justify-content-center">`;
-      xhr.open('GET', 'backend/book.php', true);
+      xhr.open("GET", "backend/book.php", true);
       xhr.onload = function () {
         if (this.status == 200) {
           let data = JSON.parse(this.responseText);
-          if (typeof data == 'string') {
+          if (typeof data == "string") {
             data = JSON.parse(data);
           }
           for (const key in data) {
@@ -90,7 +90,7 @@ function category(value) {
               <div class="card-footer">
                   <a href="product.php?id=${
                     data[key].id
-                  }" class="btn btn-primary">View details</a>
+                  }&slug=books" class="btn btn-primary">View details</a>
               </div>
           </div>`;
           }
@@ -100,22 +100,22 @@ function category(value) {
       };
       xhr.send();
       break;
-    case 'perfume':
+    case "perfume":
       output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Perfume</h2></div><div class="row justify-content-center">`;
-      xhr.open('GET', 'backend/perfume.php', true);
+      xhr.open("GET", "backend/perfume.php", true);
       xhr.onload = function () {
         if ((this.status = 200)) {
           let data = this.responseXML;
-          let perfumedata = data.getElementsByTagName('perfume');
+          let perfumedata = data.getElementsByTagName("perfume");
           for (let i = 0; i < perfumedata.length; i++) {
             output += `<div class="card m-2" style="width: 18rem">
               <img src="${
-                perfumedata[i].getElementsByTagName('img')[0].childNodes[0]
+                perfumedata[i].getElementsByTagName("img")[0].childNodes[0]
                   .nodeValue
               }" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
               <div class="card-body">
                   <h5 class="card-title">${
-                    perfumedata[i].getElementsByTagName('name')[0].childNodes[0]
+                    perfumedata[i].getElementsByTagName("name")[0].childNodes[0]
                       .nodeValue
                   }</h5>
                  
@@ -123,9 +123,9 @@ function category(value) {
               </div>
               <div class="card-footer">
                   <a href="product.php?id=${
-                    perfumedata[i].getElementsByTagName('id')[0].childNodes[0]
+                    perfumedata[i].getElementsByTagName("id")[0].childNodes[0]
                       .nodeValue
-                  }" class="btn btn-primary">View details</a>
+                  }&slug=perfumes" class="btn btn-primary">View details</a>
               </div>
               </div>`;
           }
@@ -135,22 +135,22 @@ function category(value) {
       };
       xhr.send();
       break;
-    case 'electronic1':
+    case "electronic1":
       output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Electronic1</h2></div><div class="row justify-content-center">`;
-      xhr.open('GET', 'backend/electronic1.php', true);
+      xhr.open("GET", "backend/electronic1.php", true);
       xhr.onload = function () {
         if ((this.status = 200)) {
           let data = this.responseXML;
-          let electronic1data = data.getElementsByTagName('electronic1');
+          let electronic1data = data.getElementsByTagName("electronic1");
           for (let i = 0; i < electronic1data.length; i++) {
             output += `<div class="card m-2" style="width: 18rem">
               <img src="${
-                electronic1data[i].getElementsByTagName('img')[0].childNodes[0]
+                electronic1data[i].getElementsByTagName("img")[0].childNodes[0]
                   .nodeValue
               }" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
               <div class="card-body">
                   <h5 class="card-title">${
-                    electronic1data[i].getElementsByTagName('name')[0]
+                    electronic1data[i].getElementsByTagName("name")[0]
                       .childNodes[0].nodeValue
                   }</h5>
                  
@@ -158,9 +158,9 @@ function category(value) {
               </div>
               <div class="card-footer">
                   <a href="product.php?id=${
-                    electronic1data[i].getElementsByTagName('id')[0]
+                    electronic1data[i].getElementsByTagName("id")[0]
                       .childNodes[0].nodeValue
-                  }" class="btn btn-primary">View details</a>
+                  }&slug=electronic1s" class="btn btn-primary">View details</a>
               </div>
               </div>`;
           }
@@ -170,22 +170,22 @@ function category(value) {
       };
       xhr.send();
       break;
-    case 'electronic2':
+    case "electronic2":
       output = `<div class="my-4"><div class="container d-flex justify-content-between"><h2>Electronic2</h2></div><div class="row justify-content-center">`;
-      xhr.open('GET', 'backend/electronic2.php', true);
+      xhr.open("GET", "backend/electronic2.php", true);
       xhr.onload = function () {
         if ((this.status = 200)) {
           let data = this.responseXML;
-          let electronic2data = data.getElementsByTagName('electronic2');
+          let electronic2data = data.getElementsByTagName("electronic2");
           for (let i = 0; i < electronic2data.length; i++) {
             output += `<div class="card m-2" style="width: 18rem">
               <img src="${
-                electronic2data[i].getElementsByTagName('img')[0].childNodes[0]
+                electronic2data[i].getElementsByTagName("img")[0].childNodes[0]
                   .nodeValue
               }" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
               <div class="card-body">
                   <h5 class="card-title">${
-                    electronic2data[i].getElementsByTagName('name')[0]
+                    electronic2data[i].getElementsByTagName("name")[0]
                       .childNodes[0].nodeValue
                   }</h5>
                   
@@ -193,9 +193,9 @@ function category(value) {
               </div>
               <div class="card-footer">
                   <a href="product.php?id=${
-                    electronic2data[i].getElementsByTagName('id')[0]
+                    electronic2data[i].getElementsByTagName("id")[0]
                       .childNodes[0].nodeValue
-                  }" class="btn btn-primary">View details</a>
+                  }&slug=electronic2s" class="btn btn-primary">View details</a>
               </div>
               </div>`;
           }
@@ -229,7 +229,7 @@ function category(value) {
 // }
 
 function truncate(str, n) {
-  return str.length > n ? str.substr(0, n - 1) + '..' : str;
+  return str.length > n ? str.substr(0, n - 1) + ".." : str;
 }
 // electronics2
 {
