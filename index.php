@@ -106,11 +106,11 @@ function cutString($string, $length)
                             <div class="row justify-content-evenly">
                                 <div class="mb-5">
                                     <label for="" class="form-label">Max</label>
-                                    <input type="number" step="0.01" class="d-inline-block form-control" name="" id="" placeholder="">
+                                    <input type="number" step="0.01" class="d-inline-block form-control" name="" id="max" placeholder="">
                                 </div>
                                 <div class="mb-5">
                                     <label for="" class="form-label">Min</label>
-                                    <input type="number" step="0.01" class="form-control" name="" id="" placeholder="">
+                                    <input type="number" step="0.01" class="form-control" name="" id="min" placeholder="">
                                 </div>
                             </div>
                         </div>
