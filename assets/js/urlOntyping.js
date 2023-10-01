@@ -49,8 +49,8 @@ async function search() {
     for (const key in data) {
       output += `<li class='search-list'><a title="${
         data[key].name
-      }"  href="product.php?id=${data[key].id}">${
-        data[key].name !== '' && truncate(data[key].name, 23)
+      }"  href="product.php?id=${data[key].id}">(${data[key].id}) ${
+        data[key].name !== '' && truncate(data[key].name, 20)
       }</a></li>`;
     }
     output += '</ul>';
@@ -309,9 +309,7 @@ function price() {
       output += `<h3>Products Not found</h3>`;
       display.innerHTML = output;
     }
-  }
-  else{
-    
+  } else {
   }
 }
 function truncate(str, n) {
