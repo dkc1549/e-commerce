@@ -8,39 +8,38 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-                <div class="justify-content-center">
-                    <form class="form-inline my-2 my-lg-0">
-
-                        <div id="mainsearch" class="d-block">
-                            <script>
-                                function hideSearch() {
-                                    // wait two second and make it empty
-                                    setTimeout(function() {
-                                        document.getElementById('searchitem').innerHTML = '';
-                                    }, 500)
-                                    // document.getElementById('searchitem').innerHTML = '';
-                                }
-                            </script>
-                            <input onblur="hideSearch()" class="form-control mr-sm-2" type="search" id="searchbtn" placeholder="Search by id or name" aria-label="Search" />
-                            <div class="bg-light text-secondary" id="searchitem">
-
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+            <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
                 <div class="">
                     <ul class=" footer-page">
                         <li class="nav-item active head-nav">
                             <a class="nav-link head-nav" href="index.php">Home
                                 <span class="sr-only">(current)</span></a>
                         </li>
+                        <li>
+                            <form class="form-inline my-2 my-lg-0 w-25">
 
+                                <div id="mainsearch" class="d-block">
+                                    <script>
+                                        function hideSearch() {
+                                            // wait two second and make it empty
+                                            setTimeout(function() {
+                                                document.getElementById('searchitem').innerHTML = '';
+                                            }, 500)
+                                            // document.getElementById('searchitem').innerHTML = '';
+                                        }
+                                    </script>
+                                    <input onblur="hideSearch()" class="form-control mr-sm-2" type="search" id="searchbtn" placeholder="Search by id or name" aria-label="Search" />
+                                    <div class="bg-light text-secondary" id="searchitem">
+
+                                    </div>
+                                </div>
+
+                            </form>
+                        </li>
                         <li class="nav-item ">
                             <a class=" head-nav" href="aboutus.php">About US</a>
                         </li>
-                        <li class="nav-item " style="margin-top: 5px">
+                        <!-- <li class="nav-item " style="margin-top: 5px">
                             <div class="">
                                 <div class="">
                                     <select id="category" class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example">
@@ -53,7 +52,7 @@
 
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
 

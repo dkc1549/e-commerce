@@ -3,6 +3,11 @@ let catgry = document.getElementById('category');
 catgry.addEventListener('change', function () {
   category(catgry.value);
 });
+if(catgry.value!="Filter by Category"){
+  document.getElementById('price').style.display="block";
+}else{
+  document.getElementById('price').style.display="none";  
+}
 
 document.getElementById('max').addEventListener('change', price);
 document.getElementById('min').addEventListener('change', price);
@@ -63,6 +68,7 @@ async function search() {
 
 // <======== SCRIPT FOR CATEGORY FILTER =========>
 function category(value) {
+  document.getElementById('price').style.display="block";
   let display = document.getElementById('filteroutput');
   let xhr = new XMLHttpRequest();
   let output = '';

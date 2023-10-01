@@ -61,14 +61,14 @@ function cutString($string, $length)
     <!-- ============= Catchy Headline ends ============ -->
     <div class="container-fluid">
         <div class="container">
+            <h2 class="text-center p-4">Search filters</h2>
             <div class="row">
-            <div class="col-6">
-            <h2>Search filters</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="container-fluid">
+                <div class="col-6">
+                    <h5>Filter by Category</h5>
+                    <div class="row">
+                        <div class="container-fluid">
                         <div class="row">
-                            <select id="category" class="form-select col-10 form-control form-select mb-3" aria-label=".form-select example">
+                            <select id="category" class="form-select col-8 form-control form-select mb-3" aria-label=".form-select example">
                                 <option selected disabled>Filter by Category</option>
                                 <option value="book">Book</option>
                                 <option value="perfume">Perfume</option>
@@ -79,28 +79,27 @@ function cutString($string, $length)
                                 <a name="" id="" class="btn btn-primary" href="index.php" role="button">Reset</a>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
-            <!-- =========== Price filter goes here =========== -->
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="text-center">Filter by price</div>
-                    <div class="container">
-                        <div class="row justify-content-evenly">
-                            <div class="m-2">
-                                <label for="" class="form-label">Max</label>
-                                <input type="number" step="0.01" class="d-inline-block form-control" name="" id="max" placeholder="">
-                            </div>
-                            <div class="m-2">
-                                <label for="" class="form-label">Min</label>
-                                <input type="number" step="0.01" class="form-control" name="" id="min" placeholder="">
+                <!-- =========== Price filter goes here =========== -->
+                <div class="col-md-6" id="price">
+                    <div class="row">
+                        <h5 class="text-center">Filter by price</h5>
+                        <div class="container">
+                            <div class="row justify-content-evenly">
+                                <div class="m-2">
+                                    <label for="" class="form-label">Max</label>
+                                    <input type="number" step="0.01" class="" name="" id="max" placeholder="">
+                                </div>
+                                <div class="m-2">
+                                    <label for="" class="form-label">Min</label>
+                                    <input type="number" step="0.01" class="" name="" id="min" placeholder="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
 
         </div>
