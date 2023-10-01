@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2023 at 06:33 PM
+-- Generation Time: Oct 01, 2023 at 04:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,8 +31,8 @@ CREATE TABLE `authors` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
   `number` varchar(20) DEFAULT NULL,
-  `college` varchar(255) NOT NULL,
   `email` varchar(72) NOT NULL,
+  `work_reflection` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -41,8 +41,11 @@ CREATE TABLE `authors` (
 -- Dumping data for table `authors`
 --
 
-INSERT INTO `authors` (`id`, `name`, `number`, `college`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Shishir Adhakari', '9743214900', 'Sydney international school of technology and commerce', 'shishriadk@gmail.com', NULL, NULL);
+INSERT INTO `authors` (`id`, `name`, `number`, `email`, `work_reflection`, `created_at`, `updated_at`) VALUES
+(1, 'Utsav Nepal', '9743214900', 'utsav@gmail.com', 'I have done the design part of this website', '2023-10-28 02:48:48', NULL),
+(2, 'Sandip Poudel', '982380234', 'sandip@gmail.com', 'I have done the frontend part of this website', '2023-09-29 16:39:15', NULL),
+(3, 'Ritika Karki', '909238032', 'ritika@gmail.com', 'I have done the API part of this website( fetching and requesting data)', '2023-10-28 02:49:40', NULL),
+(4, 'Pritam Magar', '982323423', 'pritam@gmail.com', 'I have done the backend part of this website.', '2023-10-28 02:51:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -244,8 +247,8 @@ CREATE TABLE `websites` (
 
 INSERT INTO `websites` (`id`, `owner`, `description`, `publish year`, `author`, `product`, `created_at`, `updated_at`) VALUES
 (1, 'SISTC', 'website for SOF102', 2021, 1, 1, '2023-09-16 16:31:27', NULL),
-(2, 'SISTC', 'website for SOF102', 2021, 1, 2, '2023-09-16 16:31:27', NULL),
-(3, 'SISTC', 'website for SOF102', 2021, 1, 3, '2023-09-16 16:33:15', NULL);
+(2, 'SISTC', 'website for SOF102', 2021, 2, 2, '2023-09-16 16:31:27', NULL),
+(3, 'SISTC', 'website for SOF102', 2021, 3, 3, '2023-09-16 16:33:15', NULL);
 
 --
 -- Indexes for dumped tables
@@ -314,7 +317,7 @@ ALTER TABLE `websites`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `electronics`

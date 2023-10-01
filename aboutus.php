@@ -27,7 +27,7 @@ include_once('include/navbar.php');
                 }
                 for (const key in data) {
                     output += `<div class="col-md-6">
-        <div class="card">
+        <div class="card my-3">
           <div class="card-header">
             <h5 class="card-title">Name: ${data[key].name}</h5>
           </div>
