@@ -61,65 +61,49 @@ function cutString($string, $length)
     <!-- ============= Catchy Headline ends ============ -->
     <div class="container-fluid">
         <div class="container">
+            <div class="row">
+            <div class="col-6">
             <h2>Search filters</h2>
             <div class="row">
-                <div class="col-6">
-                    <div class="container">
-                        <select id="category" class="form-select col-12 form-control form-select-lg mb-3" aria-label=".form-select-lg example">
-                            <option selected disabled>Filter by Category</option>
-                            <option value="book">Book</option>
-                            <option value="perfume">Perfume</option>
-                            <option value="electronic1">Electronic1</option>
-                            <option value="electronic2">Electronic2</option>
-                        </select>
-                        <div class="col-2">
-                            <a name="" id="" class="btn btn-primary" href="index.php" role="button">Reset</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- =========== Price filter goes here =========== -->
-                <div class="col-6">
-                    <div class="row">
-                        <div class="text-center">Filter by price</div>
-                        <div class="container">
-                            <div class="row justify-content-evenly">
-                                <div class="mb-5">
-                                    <label for="" class="form-label">Max</label>
-                                    <input type="number" step="0.01" class="d-inline-block form-control" name="" id="max" placeholder="">
-                                </div>
-                                <div class="mb-5">
-                                    <label for="" class="form-label">Min</label>
-                                    <input type="number" step="0.01" class="form-control" name="" id="min" placeholder="">
-                                </div>
+                <div class="col-md-6">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <select id="category" class="form-select col-10 form-control form-select mb-3" aria-label=".form-select example">
+                                <option selected disabled>Filter by Category</option>
+                                <option value="book">Book</option>
+                                <option value="perfume">Perfume</option>
+                                <option value="electronic1">Electronic1</option>
+                                <option value="electronic2">Electronic2</option>
+                            </select>
+                            <div class="col-2">
+                                <a name="" id="" class="btn btn-primary" href="index.php" role="button">Reset</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+            <!-- =========== Price filter goes here =========== -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="text-center">Filter by price</div>
+                    <div class="container">
+                        <div class="row justify-content-evenly">
+                            <div class="m-2">
+                                <label for="" class="form-label">Max</label>
+                                <input type="number" step="0.01" class="d-inline-block form-control" name="" id="max" placeholder="">
+                            </div>
+                            <div class="m-2">
+                                <label for="" class="form-label">Min</label>
+                                <input type="number" step="0.01" class="form-control" name="" id="min" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
-        <!-- <div class="col-md-3 text-center pt-4">
-                filter by price<br />
-                <div class="mb-3">
-                  <label for="" class="form-label">Max</label>
-                  <input type="text"
-                    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                </div>
-                <div class="mb-3">
-                  <label for="" class="form-label">Min</label>
-                  <input type="text"
-                    class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                </div>
-                <div class="m-4">
-                    <span>max</span>
-                    <input type="number" />
-                </div>
-                <div class="m-4">
-                    <span>min</span>
-                    <input type="number" />
-                </div>
-                <br />
-            </div> -->
+        </div>
         <div class="container-fluid" id="filteroutput">
             <div class="my-4">
                 <div class="container d-flex justify-content-between">
