@@ -16,6 +16,7 @@ $electronic1s = mysqli_query($connect, $electronic1);
 
 $electronic2 = "SELECT * FROM electronic2s LIMIT 4";
 $electronic2s = mysqli_query($connect, $electronic2);
+
 //   function to cut the string and show the first 20 characters
 function cutString($string, $length)
 {
@@ -27,30 +28,8 @@ function cutString($string, $length)
     return $string;
 }
 ?>
-<main class="body">
-    <!-- <div class="mb-3 form-inline m-4">
-        <div>
-            <input class="form-control" list="datalistOptions" id="search" placeholder="Type to search..." />
 
-            <button class="btn p-0">
-                <select class="text-white bg-success border-0 px-2 py-2 btn">
-                    <option value="search-by-id" class="bg-light text-dark">
-                        Search By Id
-                    </option>
-                    <option value="search-by-name" class="bg-light text-dark">
-                        Search By Name
-                    </option>
-                </select>
-            </button>
-        </div>
-        <datalist id="datalistOptions">
-            <option value="San Francisco"></option>
-            <option value="New York"></option>
-            <option value="Seattle"></option>
-            <option value="Los Angeles"></option>
-            <option value="Chicago"></option>
-        </datalist>
-    </div> -->
+<main class="body">
     <!-- ========== Hero section starts============ -->
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -158,8 +137,7 @@ function cutString($string, $length)
                                                                                                 echo cutString($bookarr['name'], 30) ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $bookarr['price']; ?></li>
-                                    <li>Author : <?php echo $bookarr['author']; ?></li>
-                                    <li>Type : <?php echo $bookarr['type']; ?></li>
+
                                 </ul>
 
                             </div>
@@ -185,8 +163,7 @@ function cutString($string, $length)
                                 <h5 title="<?php echo $perfumearr['name']; ?>" class="card-title"><?php echo cutString($perfumearr['name'], 30) ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $perfumearr['price']; ?></li>
-                                    <li>Brand : <?php echo $perfumearr['brand']; ?></li>
-                                    <li>Weight : <?php echo $perfumearr['weight']; ?></li>
+
                                 </ul>
 
                             </div>
@@ -212,9 +189,7 @@ function cutString($string, $length)
                                 <h5 title="<?php echo $electronic1arr['name']; ?>" class="card-title"><?php echo cutString($electronic1arr['name'], 30) ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $electronic1arr['price']; ?></li>
-                                    <li>Brand : <?php echo $electronic1arr['brand']; ?></li>
-                                    <li>OS : <?php echo $electronic1arr['os']; ?></li>
-                                    <li>Memory : <?php echo $electronic1arr['memory']; ?></li>
+
                                 </ul>
 
                             </div>
@@ -240,11 +215,6 @@ function cutString($string, $length)
                                 <h5 title="<?php echo $electronic2arr['name']; ?>" class="card-title"><?php echo cutString($electronic2arr['name'], 30) ?></h5>
                                 <ul class="card-text">
                                     <li>Price : $<?php echo $electronic2arr['price']; ?></li>
-                                    <li>Brand : <?php echo $electronic2arr['brand']; ?></li>
-                                    <li>OS : <?php echo $electronic2arr['os']; ?></li>
-                                    <li>CPU : <?php echo $electronic2arr['cpu']; ?></li>
-                                    <li>Memory : <?php echo $electronic2arr['memory size']; ?></li>
-                                    <li>Hardisk : <?php echo $electronic2arr['hardisk size']; ?></li>
                                 </ul>
 
                             </div>

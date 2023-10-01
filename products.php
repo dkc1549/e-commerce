@@ -26,18 +26,24 @@ if (isset($_GET['category'])) {
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 text-center pt-4 fixed">
-                    filter by price<br />
-                    <div class="m-4">
-                        <span>max</span>
-                        <input type="number" />
+                <div class="col-md-3">
+                    <div class="" style="margin-top: 20px;position:fixed">
+                        <div class="text-center">Filter by price</div>
+                        <div class="container">
+                            <div class=" ">
+                                <div class="">
+                                    <label for="" class="form-label">Max</label>
+                                    <input type="number" step="0.01" class="d-inline-block form-control" name="" id="max" placeholder="">
+                                </div>
+                                <div class="">
+                                    <label for="" class="form-label">Min</label>
+                                    <input type="number" step="0.01" class="form-control" name="" id="min" placeholder="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="m-4">
-                        <span>min</span>
-                        <input type="number" />
-                    </div>
-                    <br />
                 </div>
+
                 <div class="col-md-9 container">
                     <div class="row">
                         <div>
@@ -45,7 +51,7 @@ if (isset($_GET['category'])) {
                                 <h2>category name</h2>
 
                             </div>
-                            <div class="cards-container ">
+                            <div class="cards-container " id="filteroutput">
                                 <!-- card with image title description -->
                                 <?php
 

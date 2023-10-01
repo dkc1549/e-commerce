@@ -12,8 +12,8 @@
       <ul>
         <li><a href="products.php?category=books">books</a></li>
         <li><a href="products.php?category=perfumes">perfumes</a></li>
-        <li><a href="products.php?category=electronics1">electronics1</a></li>
-        <li><a href="products.php?category=electronics2">electronics2</a></li>
+        <li><a href="products.php?category=electronic2s">electronics1</a></li>
+        <li><a href="products.php?category=electronic2s">electronics2</a></li>
       </ul>
     </div>
     <div class="  py-3">
