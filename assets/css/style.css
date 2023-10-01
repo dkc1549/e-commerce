@@ -108,7 +108,7 @@ li {
 }
 
 @media (max-width: 700px) {
-  .footer {
+  .footer-page {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
@@ -116,17 +116,19 @@ li {
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
+  border-radius: 10px;
 }
 
 /* Handle on hover */

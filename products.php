@@ -10,7 +10,7 @@ if (isset($_GET['category'])) {
         $select = "SELECT * From $category WHERE product=(SELECT id FROM products WHERE CATEGORY = '$category')";
     }
     $result = mysqli_query($connect, $select);
-    
+
     // word limit
     function cutString($string, $length)
     {
@@ -21,26 +21,15 @@ if (isset($_GET['category'])) {
         }
         return $string;
     }
+
 ?>
     <main>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="" style="margin-top: 20px;position:fixed">
-                        <div class="text-center">Filter by price</div>
-                        <div class="container">
-                            <div class=" ">
-                                <div class="">
-                                    <label for="" class="form-label">Max</label>
-                                    <input type="number" step="0.01" class="d-inline-block form-control" name="" id="max" placeholder="">
-                                </div>
-                                <div class="">
-                                    <label for="" class="form-label">Min</label>
-                                    <input type="number" step="0.01" class="form-control" name="" id="min" placeholder="">
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-3 justify-content-center" style="height: fit-content;">
+                    <div class="" style="margin:20px auto;position:fixed">
+
                     </div>
                 </div>
 
@@ -48,7 +37,8 @@ if (isset($_GET['category'])) {
                     <div class="row">
                         <div>
                             <div class="category-title-container">
-                                <h2>category name</h2>
+
+                                <h2><?php echo strtoupper($category); ?></h2>
 
                             </div>
                             <div class="cards-container " id="filteroutput">
@@ -63,8 +53,7 @@ if (isset($_GET['category'])) {
                                             <h5 title="<?php echo $product['name']; ?>" class="card-title"><?php echo cutString($product['name'], 30) ?></h5>
                                             <ul class="card-text">
                                                 <li>Price : $<?php echo $product['price']; ?></li>
-                                                <!-- <li>Brand : <?php echo $product['brand']; ?></li>
-                                    <li>Weight : <?php echo $product['weight']; ?></li> -->
+
                                             </ul>
 
                                         </div>

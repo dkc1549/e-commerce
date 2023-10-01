@@ -9,34 +9,7 @@ document.getElementById('min').addEventListener('change', price);
 
 // <======= SCRIPT FOR NAV BAR SEARCH ============>
 let searchvalue = document.getElementById('searchitem');
-// function search() {
-//   let search = document.getElementById('searchbtn').value;
-//   if (search != '') {
-//     let xhr = new XMLHttpRequest();
-//     // let output = '<ul>';
-//     xhr.open('GET', 'backend/search.php?search=' + search, true);
-//     xhr.onload = function () {
-//       if ((this.status = 200)) {
-//         let data = JSON.parse(this.responseText);
-//         if (typeof data == 'string') {
-//           data = JSON.parse(data);
-//         }
-//         for (const key in data) {
-//           output += `<li><a class='search-list' href="product.php?id=${
-//             data[key].id
-//           }">${data[key].name !== '' && truncate(data[key].name, 15)}</a></li>`;
-//         }
-//         // output += '</ul>';
-//         // console.log(output);
-//       }
-//       searchvalue.innerHTML = output;
-//     };
-//     xhr.send();
-//   } else {
-//     output = '';
-//   }
-// }
-// using fetch request instead of xhr
+
 async function search() {
   let search = document.getElementById('searchbtn').value;
   if (search != '') {
@@ -87,6 +60,7 @@ function category(value) {
               data[key].name,
               30
             )}</h5>
+               <p class="card-text">Price : $${data[key].price}</p>
                  
 
               </div>
@@ -121,8 +95,7 @@ function category(value) {
                     perfumedata[i].getElementsByTagName('name')[0].childNodes[0]
                       .nodeValue
                   }</h5>
-                 
-
+                  
               </div>
               <div class="card-footer">
                   <a href="product.php?id=${
@@ -218,16 +191,19 @@ function price() {
   let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
   if (slug !== null) {
     let xhr = new XMLHttpRequest();
-    console.log('slug empty chaina wala');
+
     let maximum = document.getElementById('max').value;
-    console.log(`maximum = ${maximum}`);
+
     let minimum = document.getElementById('min').value;
-    console.log(`minimum = ${minimum}`);
-    console.log(typeof minimum);
+    if (maximum !== '' && minimum !== '' && maximum < minimum) {
+      let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
+      output += `<h3>maximum should be greater than minimum</h3>`;
+      display.innerHTML = output;
+      return;
+    }
     if (maximum === '' && minimum === '') {
       maximum = 10000;
       minimum = 0;
-      console.log('maximum and minimum empty chaina wala');
       xhr.open(
         'GET',
         `backend/price.php?max=${maximum}&min=${minimum}&slug=${slug}s`,
@@ -263,22 +239,22 @@ function price() {
       xhr.onload = function () {
         if (this.status == 200) {
           let data = JSON.parse(this.responseText);
-          console.log(data);
+
           if (typeof data == 'string') {
             data = JSON.parse(data);
           }
-          console.log(data);
 
-          data.map((item) => {
-            output += `<div class="card m-2" style="width: 18rem">
+          if (data.length > 0) {
+            data.map((item) => {
+              output += `<div class="card m-2" style="width: 18rem">
             <img src="${
               item.img
             }" height="150px" width="100%" style="object-fit: cover;" class="card-img-top" alt="..." />
             <div class="card-body">
                 <h5 title="${item.name}" class="card-title">${truncate(
-              item.name,
-              30
-            )}</h5>
+                item.name,
+                30
+              )}</h5>
                 <p class="card-text">Price : $${item.price}</p>
                 </div>
                  <div class="card-footer">
@@ -288,8 +264,13 @@ function price() {
               </div>
                 </div>
                 `;
-          });
-          display.innerHTML = output;
+            });
+            display.innerHTML = output;
+          } else {
+            let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
+            output += `<h3>Products Not found</h3>`;
+            display.innerHTML = output;
+          }
         }
       };
       xhr.send();
@@ -304,77 +285,8 @@ function price() {
            `;
       document.getElementById('filteroutput').innerHTML = output;
     }
-    if (maximum !== '' && minimum !== '' && maximum < minimum) {
-      let output = `<div class="my-4"><div class="container d-flex justify-content-between"></div><div class="row justify-content-center">`;
-      output += `<h3>Products Not found</h3>`;
-      display.innerHTML = output;
-    }
-  } else {
   }
 }
 function truncate(str, n) {
   return str.length > n ? str.substr(0, n - 1) + '..' : str;
 }
-// electronics2
-{
-  /* <ul class='card-text'>
-  <li>
-    Price : $$
-    {
-      electronic2data[i].getElementsByTagName('price')[0].childNodes[0]
-        .nodeValue
-    }
-  </li>
-  <li>
-    Brand : ${electronic2data[i].getElementsByTagName('brand')[0].textContent}
-  </li>
-  <li>OS : ${electronic2data[i].getElementsByTagName('os')[0].textContent}</li>
-  <li>
-    CPU : ${electronic2data[i].getElementsByTagName('cpu')[0].textContent}
-  </li>
-  <li>
-    Memory size : $
-    {electronic2data[i].getElementsByTagName('computer_memory')[0].textContent}
-  </li>
-  <li>
-    Hardisk size : $
-    {electronic2data[i].getElementsByTagName('hardisk')[0].textContent}
-  </li>
-</ul>; */
-}
-// electronic1
-{
-  //  <ul class='card-text'>
-  //    <li>
-  //      Price : $$
-  //      {
-  //        electronic1data[i].getElementsByTagName('price')[0].childNodes[0]
-  //          .nodeValue
-  //      }
-  //    </li>
-  //    <li>
-  //      Brand : $
-  //      {electronic1data[i].getElementsByTagName('brand')[0].textContent}
-  //    </li>
-  //    <li>
-  //      OS : ${electronic1data[i].getElementsByTagName('os')[0].textContent}
-  //    </li>
-  //    <li>
-  //      Memory : $
-  //      {electronic1data[i].getElementsByTagName('memory')[0].textContent}
-  //    </li>
-  //  </ul>;
-}
-// perfumes
-//  <ul class='card-text'>
-//    <li>
-//      Price : $$
-//      {perfumedata[i].getElementsByTagName('price')[0].childNodes[0].nodeValue}
-//    </li>
-//    <li>
-//      Brand : ${perfumedata[i].getElementsByTagName('brand')[0].textContent}
-//    </li>
-//    <li>
-//      Weight : ${perfumedata[i].getElementsByTagName('weight')[0].textContent}
-//    </li>
-//  </ul>;

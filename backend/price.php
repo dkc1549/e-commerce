@@ -13,5 +13,7 @@ if ((isset($_GET['slug'])) && (isset($_GET['max'])) && (isset($_GET['min']))) {
             $arr[] = $resultarr;
         }
         echo json_encode($arr);
+    } else {
+        echo json_encode($arr);
     }
 }

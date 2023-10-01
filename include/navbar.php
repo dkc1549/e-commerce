@@ -40,20 +40,8 @@
                         <li class="nav-item ">
                             <a class=" head-nav" href="aboutus.php">About US</a>
                         </li>
-                        <li class="nav-item " style="margin-top: 5px">
-                            <div class="">
-                                <div class="">
-                                    <select id="category" class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example">
-                                        <option selected disabled>Category</option>
-                                        <option value="book">Book</option>
-                                        <option value="perfume">Perfume</option>
-                                        <option value="electronic1">Electronic1</option>
-                                        <option value="electronic2">Electronic2</option>
-                                    </select>
 
-                                </div>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
 
