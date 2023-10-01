@@ -5,12 +5,12 @@ include('include/navbar.php');
 if (isset($_GET['category'])) {
     $category = $_GET['category'];
     if ($category == 'electronic1s' || $category == 'electronic2s') {
-        $select = "SELECT * FROM $category WHERE product=(SELECT id FROM electronic WHERE name = '$category')";
+        $select = "SELECT * FROM $category WHERE electronic=(SELECT id FROM electronics WHERE name = '$category')";
     } else {
         $select = "SELECT * From $category WHERE product=(SELECT id FROM products WHERE CATEGORY = '$category')";
-        $result = mysqli_query($connect, $select);
     }
-
+    $result = mysqli_query($connect, $select);
+    
     // word limit
     function cutString($string, $length)
     {
